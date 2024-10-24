@@ -1,0 +1,33 @@
+//Remove Even
+public class RemoveEven{
+    public int[] removeEven(int[] arr){
+        int countOdd=0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] % 2 != 0){
+                countOdd++;
+            }
+        }
+        int[] newArr= new int[countOdd];
+        int idx=0;
+        for(int i =0; i<arr.length; i++){
+            if(arr[i]%2 != 0){
+                newArr[idx] = arr[i];
+                idx++;
+            }
+        }
+        return newArr;
+
+    }
+
+    public static void printArr(int[] arr){
+        for(int i = 0; i<arr.length; i++){
+            System.out.print(""+ arr[i] +",");
+        }
+    }
+
+    public static void main(String[] args){
+        int[] arrre = {5, 9, 10, 2 , 4 ,7 ,8 , 27, 31};
+        RemoveEven ar= new RemoveEven();
+        ar.printArr(ar.removeEven(arrre));
+    }
+}
